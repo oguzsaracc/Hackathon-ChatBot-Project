@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: travel.aiml -->
+<!-- Author: smo team group -->
+<!-- Last modified: March 28, 2020 -->
+<!--  -->
+
+<!-- Checking for keyword Holiday  -->
+
+ <category>
+   <pattern>HOLIDAY</pattern>
+      <template>Great I can help you with this which country are you going to?</template>
+ </category>  
+   
+ <category>
+   <pattern>_ HOLIDAYS</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>HOLIDAYS *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ HOLIDAYS *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword clothes  -->
+<category>
+   <pattern>CLOTHES</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+<category>
+   <pattern>_ CLOTHES</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>CLOTHES *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ CLOTHES *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword wear  -->
+<category>
+   <pattern>WEAR</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<category>
+   <pattern>_ WEAR</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>WEAR *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ WEAR *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword travel  -->
+<category>
+   <pattern>TRAVEL</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<category>
+   <pattern>_ TRAVEL</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>TRAVEL *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ TRAVEL *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword travelling  -->
+<category>
+   <pattern>TRAVELLING</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<category>
+   <pattern>_ TRAVELLING</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>TRAVELLING *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ TRAVELLING *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword bring  -->
+<category>
+   <pattern>BRING</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<category>
+   <pattern>_ BRING</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>BRING *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ BRING *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<!-- Checking for keyword weather  -->
+<category>
+   <pattern>WEATHER</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+<category>
+   <pattern>_ WEATHER</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>WEATHER *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+   
+<category>
+    <pattern>_ WEATHER *</pattern>
+      <template>
+         <srai>HOLIDAY</srai>
+      </template>
+</category>
+
+
+<!-- If a country is given that is nin our sets and we store it-->
+<category>
+  <pattern># <SET>country</SET> #</pattern>
+  <template>
+  	<think><set name = "country"><map name="country_code"><star index = "2"/></map></set></think> Nice country: <formal><star index = "2"/></formal> and in which city?
+  </template>
+</category>
+ 
+ <!-- If a city is given that is in our sets and we store it-->
+<category>
+  <pattern># <SET>cities</SET> #</pattern>
+  <template>
+  	<think><set name = "city"><star index = "2"/></set></think> Nice city: <formal><star index = "2"/></formal> and what day are you planning on going?
+  </template>
+</category>
+ 
+ <!-- If a day is given we store it and give output -->
+<category>
+  <pattern># <SET>days</SET> #</pattern>
+  	<template>
+  		<think><set name = "days"><map name="day_number"><star index = "2"/></map></set></think>Would you like to know what to wear on that day?
+  	</template>
+</category>
+
+<!-- If input yes go to our recursEval method-->
+<category>
+      <pattern># YES #</pattern>
+      <that>WOULD YOU LIKE TO KNOW WHAT TO WEAR ON THAT DAY</that>
+      <template><func/></template>
+ </category>
+ 
+ <!-- If input no we say enjoy your trip-->
+ <category>
+      <pattern># NO #</pattern>
+      <that>WOULD YOU LIKE TO KNOW WHAT TO WEAR ON THAT DAY</that>
+      <template>Have a nice trip!</template>
+ </category>
+ 
+ 
+</aiml>

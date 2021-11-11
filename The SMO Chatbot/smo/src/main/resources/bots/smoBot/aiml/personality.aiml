@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: personality.aiml -->
+<!-- Author: smo Team -->
+<!-- Last modified: April 20, 2020 -->
+
+<!-- pattern if user enters hi we give one of these answers will be random every time-->
+<category><pattern># HI #</pattern>
+<template><random>
+<li>Hi how can I help you today?<li>
+<li>Hi nice to see you! How can I help you today?</li>
+<li>Hi it's great to see you! How can I help you today?</li>
+<li>Hi!  I can really feel your smile. How can I help you today?</li>
+<li>Hi! It's delightful to see you. How can I help you today?</li>
+</random></template>
+</category>
+
+<!-- pattern if user enters hello we give one of these answers will be random every time-->
+<category><pattern># HELLO #</pattern>
+<template><random>
+<li>Hi how can I help you today?<li>
+<li>Hi nice to see you! How can I help you today?</li>
+<li>Hi it's great to see you! How can I help you today?</li>
+<li>Hi!  I can really feel your smile. How can I help you today?</li>
+<li>Hi! It's delightful to see you. How can I help you today?</li>
+</random></template>
+</category>
+</aiml>
